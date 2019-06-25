@@ -6,7 +6,7 @@ package com.concurrency.task;
 public class Task implements Runnable {
     @Override
     public void run() {
-        // 下面的语句会招聘异常
+        // 下面的语句会抛出异常
         int number = Integer.parseInt("TTT");
     }
 }

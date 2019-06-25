@@ -7,12 +7,7 @@ public class SafeTask implements Runnable {
     /**
      * 线程局部变量，其中的内容不能共享，线程被初始化时会创建其包含的变量
      */
-    private static ThreadLocal<Date> startDate = new ThreadLocal<Date>() {
-        @Override
-        protected Date initialValue() {
-            return new Date();
-        }
-    };
+    private static ThreadLocal<Date> startDate = ThreadLocal.withInitial(() -> new Date());
 
     @Override
     public void run() {
